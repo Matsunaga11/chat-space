@@ -6,8 +6,8 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|chatgroup-id|integer|null: false, foreign_key: true|
-|user-id|integer|null: false, foreign_key: true|
+|chatgroup_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :chatgroup
