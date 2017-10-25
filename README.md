@@ -18,7 +18,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false  add_index user, :name|
-|email|varchar(50)|add_index :user, :email, unique:true|
+|email|varchar(50)|:email, unique:true|
 ### Association
 - has_many :messages
 - has_many :groups, through: :user_chatgroup
