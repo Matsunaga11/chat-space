@@ -6,11 +6,11 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|chatgroup_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :chatgroup
+- belongs_to :group
 - belongs_to :user
 
 ## userテーブル
@@ -21,24 +21,24 @@
 |email|varchar(50)|:email, unique:true|
 ### Association
 - has_many :messages
-- has_many :groups, through: :user_chatgroup
-- has_many :user_chatgroups
+- has_many :groups, through: :user_groups
+- has_many :user_groups
 
-## chatgroupテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false|
 ### Association
-- has_many :users, through: :user_chatgroup
+- has_many :users, through: :user_groups
 - has_many :messages
-- has_many :user_chatgroups
+- has_many :user_groups
 
-## 中間テーブル user_chatgroup
+## 中間テーブル user_group
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false  foreign_key: true|
-|chatgroup_id|references|null: false  foreign_key: true|
+|group_id|references|null: false  foreign_key: true|
 ### Association
-- belongs_to :chatgroup
+- belongs_to :group
 - belongs_to :user
 
