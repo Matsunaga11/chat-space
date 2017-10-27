@@ -1,0 +1,49 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %title chatspace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+/ .top
+/   %span#top--message チャットグループが作成されました。
+.LeftContents
+  .LeftContents__Top
+    .LeftContents__Awesome
+      %a.LeftContents__Awesome--Pencil
+        %i.fa.fa-pencil-square-o
+      %a.LeftContents__Awesome--Gear
+        %i.fa.fa-cog
+    .LeftContents__Username Takahisa
+  .LeftContents__Bottom
+    %span.LeftContents__Bottom--word1 キューバ
+    %span.LeftContents__Bottom--word2 ハバナ
+    %span.LeftContents__Bottom--word3 aaaaaaaaaaa
+    %span.LeftContents__Bottom--word4 まだメッセージはありません。
+    %span.LeftContents__Bottom--word5 sampleグループ
+    %span.LeftContents__Bottom--word4 まだメッセージはありません。
+.RightContents
+  .RightContents__Top
+    %a.RightContents__Top--Edit--Self Edit
+    %span.RightContents__Top--word1  sampleグループ
+    %span.RightContents__Top--word2 Member: Takahisa
+  .RightContents__Bottom
+    %span.RightContents__Bottom--word1 Takahisa
+    %span.RightContents__Bottom--word2 2016/10/02 06:27:07
+    %span.RightContents__Bottom--word3 なるほど
+    %span.RightContents__Bottom--word1 Takahisa
+    %span.RightContents__Bottom--word2 2016/10/02 06:27:14
+    %span.RightContents__Bottom--word3 なるほど、なるほど
+    %span.RightContents__Bottom--word1 Takahisa
+    %span.RightContents__Bottom--word2 2016/10/02 06:27:14
+    %span.RightContents__Bottom--word3 command Enterで送信したい感ある
+    %span.RightContents__Bottom--word1 Takahisa
+    %span.RightContents__Bottom--word2 2016/10/02 06:27:19
+    %span.RightContents__Bottom--word3 お腹すいた
+  .RightContents__Bottom--Mbox
+    %a.RightContents__Bottom--Mbox--Send Send
+    %a.RightContents__Bottom--Awesome
+      %i.fa.fa-picture-o
+    %span.RightContents__Bottom--inputword type a message
