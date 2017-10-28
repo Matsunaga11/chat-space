@@ -1,12 +1,4 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{charset: "utf-8"}
-    %title chatspace
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+
 / .top
 /   %span#top--message チャットグループが作成されました。
 .LeftContents
@@ -44,6 +36,6 @@
     %span.RightContents__Bottom--word3 お腹すいた
   .RightContents__Bottom--Mbox
     %a.RightContents__Bottom--Mbox--Send Send
-    %a.RightContents__Bottom--Awesome
+    %a.RightContents__Bottom--Mbox--Awesome
       %i.fa.fa-picture-o
-    %span.RightContents__Bottom--inputword type a message
+    %span.RightContents__Bottom--Mbox--inputword type a message
