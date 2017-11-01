@@ -7,7 +7,8 @@
       %a.LeftContents__Awesome--Pencil
         %i.fa.fa-pencil-square-o
       %a.LeftContents__Awesome--Gear
-        %i.fa.fa-cog
+        = link_to edit_user_path(current_user.id) do
+          %i.fa.fa-cog
     .LeftContents__Username Takahisa
   .LeftContents__Bottom
     %span.LeftContents__Bottom--word1 キューバ
