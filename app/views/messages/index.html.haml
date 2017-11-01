@@ -5,7 +5,8 @@
   .LeftContents__Top
     .LeftContents__Awesome
       %a.LeftContents__Awesome--Pencil
-        %i.fa.fa-pencil-square-o
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o
       %a.LeftContents__Awesome--Gear
         = link_to edit_user_path(current_user.id) do
           %i.fa.fa-cog
