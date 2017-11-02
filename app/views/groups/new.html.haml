@@ -9,7 +9,7 @@
         .chat-group-form__field--left
           = f.label "グループ名", class: "chat-group-form__label"
         .chat-group-form__field--right
-          = f.text_field :name, id: "chat_group_name", class: "chat-group-form__input", :placeholder => "グループ名を入力してください", :type => "text"
+          = f.text_field :name, id: "chat_group_name", class: "chat-group-form__input", placeholder: "グループ名を入力してください", type: "text"
         .chat-group-form__field.clearfix
         / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
         /
@@ -28,8 +28,7 @@
           .chat-group-form__field--right
           / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
           .checkbox
-            = collection_check_boxes(:group, :user_ids, User.all, :id, :name ) do |t|
-              =t.label { t.check_box + t.text }
+            = f.collection_check_boxes(:user_ids, User.all, :id, :name )
             / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
             /
               <div id='chat-group-users'>
@@ -41,4 +40,4 @@
         .chat-group-form__field.clearfix
           .chat-group-form__field--left
           .chat-group-form__field--right
-            = f.submit class:"chat-group-form__action-btn" , "data-disable-with" => "Save", :value => "Save"
+            = f.submit class:"chat-group-form__action-btn" , "data-disable-with":"Save", value:"Save"
