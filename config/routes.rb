@@ -4,6 +4,6 @@ resources :users, only: [:edit, :update]
 root 'messages#index'
  resources :messages, only:[:index] do
  end
- resources :groups, only:[:new, :edit, :create] do
+ resources :groups, only:[:new, :edit, :create, :update] do
  end
 end
