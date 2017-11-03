@@ -12,12 +12,9 @@
           %i.fa.fa-cog
     .LeftContents__Username Takahisa
   .LeftContents__Bottom
-    %span.LeftContents__Bottom--word1 キューバ
-    %span.LeftContents__Bottom--word2 ハバナ
-    %span.LeftContents__Bottom--word3 aaaaaaaaaaa
-    %span.LeftContents__Bottom--word4 まだメッセージはありません。
-    %span.LeftContents__Bottom--word5 sampleグループ
-    %span.LeftContents__Bottom--word4 まだメッセージはありません。
+    - @groups.each do |group|
+      .LeftContents__Bottom--groupname
+        = group.name
 .RightContents
   .RightContents__Top
     %a.RightContents__Top--Edit--Self Edit
