@@ -3,6 +3,7 @@ devise_for :users
 resources :users, only: [:edit, :update]
 root 'groups#index'
 resources :groups, only:[:index, :new, :edit, :create, :update] do
+   resources :messages, only:[:create,:index,:update]
 end
  end
 

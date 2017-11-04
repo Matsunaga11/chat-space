@@ -13,28 +13,33 @@
     .LeftContents__Username Takahisa
   .LeftContents__Bottom
     - @groups.each do |group|
-      .LeftContents__Bottom--groupname
-        = group.name
+      %a.LeftContents__Bottom--groupname
+        =link_to group_messages_path(group.id) do
+          = group.name
 .RightContents
   .RightContents__Top
-    %a.RightContents__Top--Edit--Self Edit
+    %a.RightContents__Top--Edit--Self
+      Edit
     %span.RightContents__Top--word1  sampleグループ
     %span.RightContents__Top--word2 Member: Takahisa
   .RightContents__Bottom
-    %span.RightContents__Bottom--word1 Takahisa
-    %span.RightContents__Bottom--word2 2016/10/02 06:27:07
-    %span.RightContents__Bottom--word3 なるほど
-    %span.RightContents__Bottom--word1 Takahisa
-    %span.RightContents__Bottom--word2 2016/10/02 06:27:14
-    %span.RightContents__Bottom--word3 なるほど、なるほど
-    %span.RightContents__Bottom--word1 Takahisa
-    %span.RightContents__Bottom--word2 2016/10/02 06:27:14
-    %span.RightContents__Bottom--word3 command Enterで送信したい感ある
-    %span.RightContents__Bottom--word1 Takahisa
-    %span.RightContents__Bottom--word2 2016/10/02 06:27:19
-    %span.RightContents__Bottom--word3 お腹すいた
+    %span.RightContents__Bottom--word1
+    %span.RightContents__Bottom--word2
+    %span.RightContents__Bottom--word3
+    %span.RightContents__Bottom--word1
+    %span.RightContents__Bottom--word2
+    %span.RightContents__Bottom--word3
+    %span.RightContents__Bottom--word1
+    %span.RightContents__Bottom--word2
+    %span.RightContents__Bottom--word3
+    %span.RightContents__Bottom--word1
+    %span.RightContents__Bottom--word2
+    %span.RightContents__Bottom--word3
   .RightContents__Bottom--Mbox
-    %a.RightContents__Bottom--Mbox--Send Send
-    %a.RightContents__Bottom--Mbox--Awesome
-      %i.fa.fa-picture-o
-    %span.RightContents__Bottom--Mbox--inputword type a message
+  = form_for(@message, url: group_messages_path ) do |f|
+    .RightContents__Bottom--Mbox--Send
+      =f.submit  "data-disable-with":"Sending・・", value:"Send"
+    %i.fa.fa-picture-o
+      =f.file_field class:"RightContents__Bottom--Mbox--Awesome",type: "file"
+    .RightContents__Bottom--Mbox--inputword
+      =f.text_field :body, placeholder: "type a message", type: "text"

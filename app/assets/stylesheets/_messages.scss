@@ -40,6 +40,11 @@
     height: 85%;
     color: $nameColor;
     padding-left:20px;
+      &--groupname{
+        display: block;
+        padding:20px 0;
+      }
+
       &--word1{
       padding-top:20px;
       font-size:15px;
@@ -160,4 +165,11 @@ color: #FFF;
     &.fa-picture-o{
     color:black;
     }
+}
+
+a:link{color:white;
+text-decoration:none;
+}
+a:visited{color:white;
+text-decoration:none;
 }

@@ -59,3 +59,6 @@ group :development, :test, :production do
 end
 
 gem 'pry-rails'
+
+gem "carrierwave"
+gem 'mini_magick'
