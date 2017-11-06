@@ -36,10 +36,11 @@
     %span.RightContents__Bottom--word2
     %span.RightContents__Bottom--word3
   .RightContents__Bottom--Mbox
-  = form_for(@message, url: group_messages_path ) do |f|
-    .RightContents__Bottom--Mbox--Send
-      =f.submit  "data-disable-with":"Sending・・", value:"Send"
-    %i.fa.fa-picture-o
-      =f.file_field class:"RightContents__Bottom--Mbox--Awesome",type: "file"
-    .RightContents__Bottom--Mbox--inputword
-      =f.text_field :body, placeholder: "type a message", type: "text"
+    = form_for [@group, @message] do |f|
+      =f.label :image do
+        %i.fa.fa-picture-o
+        =f.file_field :image, class:"RightContents__Bottom--Mbox--Awesome",type: "file"
+      .RightContents__Bottom--Mbox--inputword
+        =f.text_field :body, placeholder: "type a message", type: "text"
+      .RightContents__Bottom--Mbox--Send
+        =f.submit "data-disable-with":"Sending・・", value:"Send"

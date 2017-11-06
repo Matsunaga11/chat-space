@@ -1,12 +1,12 @@
 class Message < ApplicationRecord
 belongs_to :group
 belongs_to :user
-validates :body, presence: true
+validates :image_data?, presence: true
 mount_uploader :image, ImageUploader
 
-# def contents_exist
-#   if :message && :body, presence: true
-#     errors.add(":メッセージまたは画像を送信してください。")
-#   end
-#  end
+def image_data?
+  image == "null" &&  body == ""
+
+end
+
 end

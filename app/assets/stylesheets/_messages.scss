@@ -146,14 +146,15 @@
       float:right;
       line-height: 75px;
       margin-right:10px;
+      display:none;
       }
     &--inputword{
-      float:left;
-      display:block;
-      margin-left:10px;
-      font-size:16px;
-      color:#434A54;
-      margin-top:20px;
+      // float:left;
+      // display:block;
+      // margin-left:10px;
+      // font-size:16px;
+      // color:#434A54;
+      // margin-top:20px;
       }
     }
   }
@@ -163,7 +164,8 @@
 .fa{
 color: #FFF;
     &.fa-picture-o{
-    color:black;
+      float:right;
+      color:black;
     }
 }
 
@@ -173,3 +175,12 @@ text-decoration:none;
 a:visited{color:white;
 text-decoration:none;
 }
+
+#message_body{
+  border:none;
+  margin-top:20px;
+  float:left;
+  display:block;
+  margin-left:10px;
+}
+
