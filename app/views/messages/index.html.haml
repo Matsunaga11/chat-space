@@ -17,21 +17,24 @@
   .RightContents__Top
     %a.RightContents__Top--Edit--Self
       Edit
-    %span.RightContents__Top--word1  sampleグループ
-    %span.RightContents__Top--word2 Member: Takahisa
+    %span.RightContents__Top--word1
+      = @group.name
+    %span.RightContents__Top--word2
+      member:
+      = member_get(@group)
   .RightContents__Bottom
-    %span.RightContents__Bottom--word1
-    %span.RightContents__Bottom--word2
-    %span.RightContents__Bottom--word3
-    %span.RightContents__Bottom--word1
-    %span.RightContents__Bottom--word2
-    %span.RightContents__Bottom--word3
-    %span.RightContents__Bottom--word1
-    %span.RightContents__Bottom--word2
-    %span.RightContents__Bottom--word3
-    %span.RightContents__Bottom--word1
-    %span.RightContents__Bottom--word2
-    %span.RightContents__Bottom--word3
+    - @messages.each do |message|
+      .RightContents__Bottom--word
+        %span.RightContents__Bottom--word--name
+          = message.user.name
+        %span.RightContents__Bottom--word--time
+          = message.created_at
+        -if message.image.present?
+          %span.RightContents__Bottom--word--pic
+            = image_tag message.image, alt:"picture", height: "50", width: "50"
+        -if message.body.present?
+          %span.RightContents__Bottom--word--text
+            = message.body
   .RightContents__Bottom--Mbox
     = form_for [@group, @message] do |f|
       =f.text_field :body, placeholder: "type a message", type: "text", class:"RightContents__Bottom--Mbox--inputword"

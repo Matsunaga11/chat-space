@@ -100,23 +100,27 @@
   &__Bottom{
     height: calc(85% - 90px);
     background-color: #F5F5F5;
-    &--word1{
-      display: inline-block;
-      padding:46px 0 10px 40px;
-      font-size:16px;
-    }
-    &--word2{
-      display:inline-block;
-      color:$subTextColor;
-      font-size:12px;
-      padding-left:10px;
-    }
-    &--word3{
-      display:block;
-      font-size:14px;
-      padding-left:40px;
+    overflow-y: scroll;
+    &--word{margin-left: 30px;
+            padding-top: 50px;
 
-    }
+      &--name{
+        display:inline-block;
+        font-style: bold;
+
+      }
+      &--time{
+        display:inline-block;
+      }
+      &--text{
+        margin-top:20px;
+        display:block;
+      }
+      &--pic{
+      display:block;
+      margin-top:10px;
+      }
+            }
  &--Mbox{
     background-color:white;
     padding-top:15px;
