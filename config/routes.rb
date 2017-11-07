@@ -6,7 +6,3 @@ resources :groups, only:[:index, :new, :edit, :create, :update] do
    resources :messages, except:[:update]
 end
  end
-
-
-
-
