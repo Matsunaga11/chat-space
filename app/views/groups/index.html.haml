@@ -14,7 +14,7 @@
   .LeftContents__Bottom
     - @groups.each do |group|
       %a.LeftContents__Bottom--groupname
-        =link_to group_messages_path(group.id) do
+        =link_to group_messages_path(group) do
           = group.name
 .RightContents
   / .RightContents__Top

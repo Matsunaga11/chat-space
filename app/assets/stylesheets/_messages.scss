@@ -32,7 +32,6 @@
       color: $nameColor;
       line-height: 100px;
       width:100%;
-      // float:left;
       margin:0 0 0 20px;
   }
   &__Bottom{
@@ -141,6 +140,7 @@
       padding:10px 20px;
       float:right;
       margin:10px 10px 0 15px;
+
       }
     &--Awesome{
       float:right;
@@ -166,6 +166,7 @@ color: #FFF;
     &.fa-picture-o{
       float:right;
       color:black;
+      line-height:75px;
     }
 }
 
@@ -183,4 +184,5 @@ text-decoration:none;
   display:block;
   margin-left:10px;
 }
+
 
