@@ -9,10 +9,9 @@ mount_uploader :image, ImageUploader
   end
 
   def self.hot_message(group)
-     hot_message = group.messages
-        if hot_message.last.try(:body) && hot_message.last.try(:body) != ""
-          hot_message.last.body
-        elsif hot_message.last.try(:image)
+        if group.messages.last.try(:body) && group.messages.last.try(:body) != ""
+          group.messages.last.body
+        elsif group.messages.last.try(:image)
            "画像を送信しました。"
         else
           "メッセージは送信されていません"
