@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def Message.hot_message(group)
+  def hot_message(group)
         if group.messages.blank?
           "メッセージは送信されていません"
         elsif group.messages.last.body.blank?
