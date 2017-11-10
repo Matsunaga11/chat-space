@@ -15,7 +15,7 @@
         =link_to group_messages_path(group) do
           = group.name
         .LeftContents__Bottom--groupname--message
-          = Message.hot_message(group)
+          = group.messages.hot_message(group)
 .RightContents
   .RightContents__Top
     %a.RightContents__Top--Edit--Self
