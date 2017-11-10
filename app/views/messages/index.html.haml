@@ -11,14 +11,14 @@
       = current_user.name
   .LeftContents__Bottom
     - @groups.each do |group|
-      %a.LeftContents__Bottom--groupname
+      .LeftContents__Bottom--groupname
         =link_to group_messages_path(group) do
           = group.name
         .LeftContents__Bottom--groupname--message
           = group.messages.hot_message(group)
 .RightContents
   .RightContents__Top
-    %a.RightContents__Top--Edit--Self
+    .RightContents__Top--Edit--Self
       Edit
     %span.RightContents__Top--word1
       = @group.name
