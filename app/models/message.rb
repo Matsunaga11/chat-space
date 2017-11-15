@@ -8,4 +8,3 @@ mount_uploader :image, ImageUploader
     image.presence || body.presence
   end
 end
-
