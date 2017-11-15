@@ -10,7 +10,7 @@ describe MessagesController, type: :controller do
   end
 
   describe 'GET #index' do
-    before do
+  before do
   login_user user
   get :index, group_id: group
   end
@@ -34,8 +34,8 @@ describe MessagesController, type: :controller do
         end
       end
       context 'not login' do
-          it 'redirects to new_user_session_path' do
-          redirect_to new_user_session_path
+        it 'redirects to new_user_session_path' do
+        redirect_to new_user_session_path
         end
       end
    end
