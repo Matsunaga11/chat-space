@@ -54,19 +54,24 @@ gem "haml-rails", "~> 1.0"
 gem "font-awesome-rails"
 
 group :development, :test, :production do
-  gem 'devise'
+  gem 'devise', '4.3.0'
 end
 
 gem 'pry-rails'
 
 gem "carrierwave"
 gem 'mini_magick'
-group :development, :test do
+
+group :development do
+  gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
 end
 
-group :development do
-  gem 'web-console', '~> 2.0'
-end
+
+

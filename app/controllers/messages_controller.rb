@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :get_group_message , only: [:index, :create]
 
   def index
+
   end
   def create
     @message = current_user.messages.new(message_params)
