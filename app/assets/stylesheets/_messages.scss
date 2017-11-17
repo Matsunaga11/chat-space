@@ -1,4 +1,3 @@
-
 .LeftContents{
   width:300px;
   height:100vh;
@@ -176,4 +175,15 @@ text-decoration:none;
   outline:0;
 }
 
+.flash__notice{
+  background-color: $mainBlueColor;
+  height:50px;
+  position:relative;
+}
+
+.sentence{
+position: absolute;
+top:10px;
+left:560px;
+}
 
