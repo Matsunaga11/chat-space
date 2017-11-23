@@ -52,11 +52,10 @@ $(function(){
         contentType: false
       })
       .done(function(data){
-        var html = buildHTML(data);
+        buildHTML(data);
         $('.RightContents__Bottom--Mbox--inputword').val('');
         $('.RightContents__Bottom--Mbox--Awesome').val('');
         flash();
-        var num = 0;
         $('.RightContents__Bottom--Mbox--Send').on('click', function() {
         $('.RightContents__Bottom').animate({scrollTop: 10000000 }, 'fast');
        });
