@@ -7,10 +7,12 @@
       %a.LeftContents__Awesome--Gear
         = link_to edit_user_path(current_user.id) do
           %i.fa.fa-cog
-    .LeftContents__Username Takahisa
+    .LeftContents__Username
+      = current_user.name
   .LeftContents__Bottom
     - @groups.each do |group|
-      %a.LeftContents__Bottom--groupname
+      .LeftContents__Bottom--groupname
         =link_to group_messages_path(group) do
           = group.name
-.RightContents
+        .LeftContents__Bottom--groupname--message
+          = hot_message(group)

@@ -19,7 +19,8 @@
 .RightContents
   .RightContents__Top
     .RightContents__Top--Edit--Self
-      Edit
+      =link_to edit_group_path(@group) do
+        .editlink Edit
     %span.RightContents__Top--word1
       = @group.name
     %span.RightContents__Top--word2
