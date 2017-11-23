@@ -17,7 +17,6 @@ $(function() {
   };
 
   $(document).on("click", ".user-search-add", function() {
-      console.log(this);
       $(this).parent().remove();
       var add_user = $(this).attr("data-user-name");
       var add_id = $(this).attr("data-user-id");
@@ -34,8 +33,8 @@ $(function() {
   for (var i=0; i<element.length; i++) {
     user0 = (element[i])
     user0_value=(user0["value"]).split('|')
-    user_name = (user0_value[0]); //userのname
-    user_id = (user0_value[1]); //userのid
+    user_name = (user0_value[0]);
+    user_id = (user0_value[1]);
     var added_user_list = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
     <input name='group[user_ids][]' type='hidden' value= ${user_id}  >
     <p class='chat-group-user__name'> ${user_name} </p>
@@ -47,7 +46,6 @@ $(function() {
 
   $('#user-search-field').on('keyup', function(e){
     e.preventDefault();
-    console.log(this);
     var input = $("#user-search-field").val();
     if(input == ('')){
       $('#user-search-result').find('div').remove();
@@ -61,7 +59,6 @@ $(function() {
         contentType: false
       })
       .done(function(data){
-        console.log(this);
         $('#user-search-result').find('div').remove();
         $(data).each(function(i, user){
           buildHTML(user)
