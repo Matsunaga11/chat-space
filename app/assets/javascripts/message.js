@@ -1,7 +1,32 @@
 $(function(){
+
+    $(function(){
+    setInterval(update, 5000);
+    });
+    function update(){
+    if($('.messages')[0]){
+      var message_id = $('.messages:last').data('id');
+    } else {
+      var message_id = 0
+    }
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: { id: message_id }
+      },
+      dataType: 'json'
+    })
+    .always(function(data){
+      $.each(data, function(i, data){
+        buildHTML(data);
+      });
+    });
+  }
+
   function buildHTML(message){
     var message_list = $(".RightContents__Bottom");
-    var put_image = `<div class = RightContents__Bottom--word>
+    var put_image = `<div class = RightContents__Bottom--word, data-message-id="${message.id}>
         <span class = RightContents__Bottom--word--name>
           ${ message.username }
           </span>
@@ -11,7 +36,7 @@ $(function(){
         <span class = RightContents__Bottom--word--pic>
             image_tag ${ message.image }, alt:"picture", height: "50", width: "50"
             </span></div>`
-    var put_text =  `<div class = RightContents__Bottom--word>
+    var put_text =  `<div class = RightContents__Bottom--word, data-message-id="${message.id}>
         <span class = RightContents__Bottom--word--name>
           ${ message.username }
           </span>
@@ -27,7 +52,7 @@ $(function(){
              };
        if ( message.image.url === null )
             {
-             message_list.append(put_text);
+            message_list.append(put_text);
             }
         }
       function flash() {
